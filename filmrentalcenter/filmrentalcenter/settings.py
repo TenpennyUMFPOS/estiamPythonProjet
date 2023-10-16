@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'customerApi.apps.CustomerapiConfig',
-    'filmApi.apps.FilmapiConfig'
+    'filmApi.apps.FilmapiConfig',
+    'rentalApi.apps.RentalapiConfig'
 ]
 
 REST_FRAMEWORK = {

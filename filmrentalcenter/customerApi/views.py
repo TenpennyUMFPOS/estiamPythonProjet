@@ -2,11 +2,13 @@ from django.shortcuts import get_object_or_404, render
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
+
 # Create your views here.
 
 from .models import customersModel
 from .serializers import CustomersSerializer
 from rest_framework.permissions import IsAuthenticated
+
 
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = customersModel.objects.all()
@@ -41,3 +43,5 @@ class CustomerViewSet(viewsets.ModelViewSet):
         return Response("User Was deleted successfully")
     
     
+    
+
