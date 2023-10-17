@@ -2,19 +2,14 @@ from django.shortcuts import get_object_or_404, render
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
-
-# Create your views here.
-
 from .models import customersModel
 from .serializers import CustomersSerializer
 from rest_framework.permissions import IsAuthenticated
 
-
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = customersModel.objects.all()
     serializer_class = CustomersSerializer
-
-
+    permission_classes = [IsAuthenticated]    
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data = request.data )
         serializer.is_valid(raise_exception = True)
