@@ -23,7 +23,7 @@ class RentalViewSet(viewsets.ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         queryset = self.get_queryset()
-        data = [{'id': record.id,'customer': record.customer.id, 'film': record.film.title,'rentaldate': record.rentaldate,'returndate': record.returndate,}for record in queryset] 
+        data = [{'id': record.id,'customer': record.customer.username, 'film': record.film.title,'rentaldate': record.rentaldate,'returndate': record.returndate,}for record in queryset] 
         return Response(data)
     
     
