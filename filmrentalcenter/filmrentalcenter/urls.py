@@ -9,8 +9,6 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from .customAPIs import customAPIs
-
-
 router = routers.DefaultRouter()
 router.register(r'customers',views.CustomerViewSet)
 router.register(r'films',filmview.FilmViewSet)
